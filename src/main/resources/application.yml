@@ -1,0 +1,19 @@
+spring:
+  kafka:
+    bootstrap-servers: moped-01.srvs.cloudkafka.com:9094
+    properties:
+      security:
+        protocol: SASL_SSL
+      sasl:
+        mechanism: SCRAM-SHA-256
+        jaas:
+          config: org.apache.kafka.common.security.scram.ScramLoginModule required username="yl2o5129" password="8DzU4BKR0nI5v1lEMMcu1319drhiiM7a";
+    producer:
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+cloudkarafka:
+  topic: yl2o5129-default
+server:
+  servlet:
+    contextPath: /producer
+  port: 8081
+
